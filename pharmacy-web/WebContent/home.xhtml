@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+
+</h:head>
+<h:body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="content">
+			<div class="mycontainer">
+			<h:outputStylesheet library="css" name="home.css" />
+
+				<div class="divbtn">
+					<button type="button" class="btn1">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/2430/2430569.svg" />
+						<div class="title">
+							<h2>TOTAL CUSTOMERS : #{customersBean.TotalCustomers()}</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/2430/2430569.svg" />
+						<div class="title">
+							<h2>TOTAL SUPPLIER : #{supplierBean.TotalSupplier()}</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/2430/2430569.svg" />
+						<div class="title">
+							<h2>TOTAL PURCHASE : #{salesBean.TotalSales()}</h2>
+						</div>
+					</button>
+				</div>
+
+				<div class="divbtn">
+					<button type="button" class="btn1"
+						onclick="window.location.href='./AddProduct.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/1524/1524983.svg" />
+						<div class="title">
+							<h2>ADD NEW PRODUCT</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1"
+						onclick="window.location.href='./AddSupplier.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/2103/2103848.svg" />
+						<div class="title">
+							<h2>ADD NEW SUPPLIER</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1"
+						onclick="window.location.href='./AllProducts.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/407/407775.svg" />
+						<div class="title">
+							<h2>STOCK REPORT</h2>
+						</div>
+					</button>
+				</div>
+				
+				<div class="divbtn">
+					<button type="button" class="btn1"
+						onclick="window.location.href='./AllCustomers.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/1605/1605350.svg" />
+						<div class="title">
+							<h2>CUSTOMERS</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1"
+						onclick="window.location.href='./AllSales.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/914/914832.svg" />
+						<div class="title">
+							<h2>SALES REPORT</h2>
+						</div>
+					</button>
+					<button type="button" class="btn1"
+						onclick="window.location.href='./home.xhtml'">
+						<img class="toimg"
+							src="https://image.flaticon.com/icons/svg/2103/2103800.svg" />
+						<div class="title">
+							<h2>Dashboard</h2>
+						</div>
+					</button>
+				</div>
+
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

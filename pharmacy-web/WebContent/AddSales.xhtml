@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+</h:head>
+<body>
+
+	<ui:composition template="/template/layout.xhtml">
+
+		<ui:define name="content">
+			<div class="mycontent">
+			<h:outputStylesheet library="css" name="AddProduct.css" />
+	
+				<h2>Add New Sales</h2>
+				<div class="myform1" onmouseup="true"  >
+				
+					<h:form >
+						<h:outputLabel  styleClass="mylabel" >Name Product</h:outputLabel> <br/>
+					     <p:selectOneMenu id="console" value="#{salesBean.salesDTO.nameProduct}" style="width:125px">
+				            <f:selectItem itemLabel="project 1" itemValue="project 1" />
+				            <f:selectItem itemLabel="project 2" itemValue="project 2" />
+				            <f:selectItem itemLabel="project 3" itemValue="project 3" />
+				            <f:selectItem itemLabel="project 4" itemValue="project 4" />
+				      	</p:selectOneMenu><br/>
+					    <h:outputLabel  styleClass="mylabel" >Quantity</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="qte"  value="#{salesBean.salesDTO.quantity}" required="true" requiredMessage="Quantity"/><br/> 			
+					   	<h:outputLabel  styleClass="mylabel" >Price per sale</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="price"  value="#{salesBean.salesDTO.pricePerchase}" required="true" requiredMessage="Price"/><br/>  								
+						<h:commandButton styleClass="myinput" type="submit" value="Save" action="#{salesBean.SaveSales()}" />
+						
+					</h:form>
+				</div>
+
+			</div>
+
+
+
+
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>
+
+
+
+

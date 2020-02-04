@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<body>
+
+	<ui:composition template="/template/layout.xhtml">
+
+		<ui:define name="content">
+			<div class="mycontent">
+			<h:outputStylesheet library="css" name="AddProduct.css" />
+	
+				<h2>Add New Supplier</h2>
+				<div class="myform1" onmouseup="true"  >
+				
+					<h:form >
+						<h:outputLabel  styleClass="mylabel" >Name Supplier</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="namecustomer"  value="#{supplierBean.supplierDTO.name}" required="true" requiredMessage="Name Customer"/><br/>  
+					    <h:outputLabel  styleClass="mylabel" >Phone Number</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="phonenumber"  value="#{supplierBean.supplierDTO.phoneNumber}" required="true" requiredMessage="Phone Number"/><br/> 			
+					   	<h:outputLabel  styleClass="mylabel" >Address</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="Address"  value="#{supplierBean.supplierDTO.adresse}" required="true" requiredMessage="Email"/><br/>  								
+						
+						<h:outputLabel  styleClass="mylabel" >Details</h:outputLabel>  <br/>
+					    <p:inputTextarea styleClass="myinputdetails" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." value="#{supplierBean.supplierDTO.details}" autoResize="false" />
+					    <br />
+					    <h:outputLabel styleClass="mylabel" id="display" /><br/>  <br/>
+						
+						<h:outputLabel  styleClass="mylabel" >Date Registration </h:outputLabel>
+        				<p:datePicker styleClass="datePicker"  id="button" value="#{supplierBean.supplierDTO.dateRegestration}" showIcon="true" /> <br/>   <br/>				
+						
+<!-- 						<p:calendar value="#{supplierBean.supplierDTO.dateRegestration}" pattern="MM/dd/yyyy"/>
+ -->						
+					
+						<h:commandButton styleClass="myinput" type="submit" value="Save" action="#{supplierBean.SaveSupplier()}" />
+								
+					</h:form>
+				</div>
+
+			</div>
+
+
+
+
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>
+
+
+
+

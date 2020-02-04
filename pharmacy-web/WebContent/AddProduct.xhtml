@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	>
+
+<h:head>
+
+</h:head>
+<body>
+
+	<ui:composition template="/template/layout.xhtml">
+
+		<ui:define name="content">
+			<div class="mycontent">
+			<h:outputStylesheet library="css" name="AddProduct.css" />
+	
+				<h2>Add New Product</h2>
+				<div class="myform1" onmouseup="true"  >
+				
+					<h:form >
+						<h:outputLabel  styleClass="mylabel" >Name Product</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="fname"  value="#{productsBean.productsDTO.nameProduct}" required="true" requiredMessage="First Name"/><br/>  
+						<!-- <h:outputLabel  styleClass="mylabel" >Supplier</h:outputLabel> 
+						 <h:selectOneMenu > 
+					            <f:selectItem itemValue = "Supplier1" itemLabel = "Supplier1" /> 
+					            <f:selectItem itemValue = "Supplier2" itemLabel = "Supplier2" /> 
+					            <f:selectItem itemValue = "Supplier3" itemLabel = "Supplier3" /> 
+					    </h:selectOneMenu> 	 -->	
+					    <h:outputLabel  styleClass="mylabel" >Supplier</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="supplier"  value="#{productsBean.productsDTO.supplier}" required="true" requiredMessage="supplier"/><br/> 			
+					   	<h:outputLabel  styleClass="mylabel" >Quantity</h:outputLabel> 
+						<h:inputText styleClass="myinput"  id="quantity"  value="#{productsBean.productsDTO.quantity}" required="true" requiredMessage="quantity"/><br/>  				
+						<h:outputLabel  styleClass="mylabel" >Price Perchase</h:outputLabel>  
+						<h:inputText styleClass="myinput"  id="pricePerchase"  value="#{productsBean.productsDTO.pricePerchase}" required="true" requiredMessage="pricePerchase"/><br/>  				
+						<h:commandButton styleClass="myinput" type="submit" value="Save" action="#{productsBean.SaveProducts()}" />
+								
+					</h:form>
+				</div>
+
+			</div>
+
+
+
+
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>
+
+
+
+

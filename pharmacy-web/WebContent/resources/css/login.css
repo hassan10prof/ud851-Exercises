@@ -1,0 +1,109 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+
+
+
+
+}
+
+form {
+	border: 3px solid #f1f1f1;
+	width: 50%;
+	margin-left: 25%;
+	background: #f1f1f1;
+	margin-top: 7%;
+	border-radius: 10px;
+}
+
+.ic {
+	width: 100%;
+	margin: 0;
+	height: 600px;
+	position: fixed;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+.myinputlogin{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+button {
+	background-color: #41a8f3;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 25px;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.mybtnlogin{
+	background-color: #41a8f3;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 25px;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	/* background-color: #5832f1; */
+	background-color:#41a8f3; 
+	
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+
+img.avatar {
+	width: 20%;
+	border-radius: 50%;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}

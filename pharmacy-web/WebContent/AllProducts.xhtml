@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="content">
+
+			<div class="TableCustomers">
+				<h:outputStylesheet library="css" name="Products.css" />
+<!-- 				<h:outputStylesheet library="awesome" name="css/font-awesome.css" />
+ -->				
+
+
+
+				<h:form>
+				<div class="divbtn">
+					<h2 class="title">All Products</h2>
+					<h:commandButton styleClass="btnAdd" value="Add New" type="submit" action="AddProduct.xhtml" />
+				</div>
+				<div class="divfilter">
+				<h3>From </h3><h:inputText styleClass="myinputfilter"  value="#{productsBean.v1}" required="true" requiredMessage="qnatityNumber"/><br/> 
+				<h3>To</h3><h:inputText styleClass="myinputfilter"  value="#{productsBean.v2}" required="true" requiredMessage="qnatityNumber"/><br/> 
+					<h:commandButton styleClass="btnfilter" value="Clean" type="submit" action="#{productsBean.CleanFilter()}" />
+					<h:commandButton styleClass="btnfilter" value="Filter" type="submit" action="#{productsBean.getAllbyquantity()}" />
+				</div>
+					<h:dataTable value="#{productsBean.listproducts}" var="e"
+						styleClass="ProductsTable" headerClass="ProductTableHeader"
+						rowClasses="ProductableOldRow,ProductTableEvenRow">
+
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							#{e.id} 
+						</h:column>
+						<h:column>
+							<f:facet name="header">Name Product</f:facet>
+							#{e.nameProduct} 
+						</h:column>
+						<h:column>
+							<f:facet name="header">Supplier</f:facet>
+							#{e.supplier} 
+						</h:column>
+						<h:column>
+							<f:facet name="header">Quantity</f:facet>
+							#{e.quantity} 
+						</h:column>
+						<h:column>
+							<f:facet name="header">Price Perchase</f:facet>
+							#{e.pricePerchase}
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">Action</f:facet>
+							<p:commandButton style="background:#4ed8e7; color:white;" styleClass="mybtnm" icon="fa fa-edit" action="#{productsBean.SetValues(e.id)}"/>
+							<p:commandButton style="background:#fb4d39; color:white;" styleClass="btnAction" icon="fa fa-trash" action="#{productsBean.RemoveProduct(e.id)}"/>
+
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
